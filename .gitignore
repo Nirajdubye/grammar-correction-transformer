@@ -1,11 +1,14 @@
-# Checkpoints and Large Model Weights (>100MB cannot be pushed to standard GitHub)
-*.pt
-*.pth
-*.bin
-*.onnx
-checkpoints/
+# Large Model Training Checkpoints (Raw weights >200MB)
 final_checkpoint/
 checkpoints2/
+*.bin
+*.onnx
+
+# Allow lightweight 48MB production inference weights
+!checkpoints/
+!checkpoints/stage_1.pt
+!checkpoints/stage_2.pt
+!checkpoints/stage_3.pt
 
 # Datasets & Large Data Files
 *.csv.gz
@@ -28,21 +31,6 @@ __pycache__/
 .venv/
 env/
 venv/
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
 
 # Operating System Files
 .DS_Store
@@ -52,9 +40,3 @@ wheels/
 .Trashes
 ehthumbs.db
 Thumbs.db
-
-# IDE & Editor Files
-.vscode/
-.idea/
-*.sublime-project
-*.sublime-workspace

@@ -107,6 +107,8 @@ class GrammarCorrector:
         if checkpoint_path and os.path.exists(checkpoint_path):
             checkpoint = torch.load(checkpoint_path, map_location=self.device)
             state_dict = checkpoint.get("model_state_dict", checkpoint)
+            if isinstance(state_dict, dict) and self.device.type == "cpu":
+                state_dict = {k: v.float() if v.is_floating_point() else v for k, v in state_dict.items()}
             self.model.load_state_dict(state_dict)
             self.model.eval()
             self.checkpoint_loaded = True
