@@ -1,0 +1,60 @@
+# Checkpoints and Large Model Weights (>100MB cannot be pushed to standard GitHub)
+*.pt
+*.pth
+*.bin
+*.onnx
+checkpoints/
+final_checkpoint/
+checkpoints2/
+
+# Datasets & Large Data Files
+*.csv.gz
+*.parquet
+corpus.txt
+final_dataset/
+split_datasets/
+
+# TensorBoard Logs
+runs/
+runs2/
+final_runs/
+
+# Python & Environment
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.env
+.venv/
+env/
+venv/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE & Editor Files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
